@@ -564,8 +564,8 @@
 <script>
     new Valine({
         el: '#vcomments',
-        appId: 'nbsj0AUszwQPAmiUHNqrBeBe-MdYXbMMI',
-        appKey: 'Ie3lTziyhBQHog5yn4nvAr01',
+        appId: '1zmtVFE9MdwoixCVqILoBL9A-gzGzoHsz',
+        appKey: '6y7eWwFEMpx1MPPEeIzFSm7G',
         notify: 'false' === 'true',
         verify: 'false' === 'true',
         visitor: 'true' === 'true',
@@ -579,6 +579,18 @@
 <!--酷Q推送-->
 
 
+                    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                    jinrishici.load(function(result) {
+                        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+                        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+                    });
+                    </script>
+                    <style>
+                        textarea[id='veditor']::placeholder{
+                        color:#b3b3b3;font-size:14px;text-align:center;line-height:6rem;
+                        }
+                    </style>
             
 
             
