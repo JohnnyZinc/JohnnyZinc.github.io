@@ -579,6 +579,18 @@
 <!--酷Q推送-->
 
 
+                    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                    jinrishici.load(function(result) {
+                        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+                        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+                    });
+                    </script>
+                    <style>
+                        textarea[id='veditor']::placeholder{
+                        color:#b3b3b3;font-size:14px;text-align:center;line-height:6rem;
+                        }
+                    </style>
             
 
             
@@ -851,6 +863,11 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+    <!-- 点击出现彩色气球爆炸效果 -->
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/clickBom.js"></script>
 
 </body>
 

@@ -427,6 +427,35 @@
 
 <main class="content">
 
+    <div id="indexCard" class="index-card">
+        <div class="container ">
+            <div class="card">
+                <div class="card-content">
+                    <span id="hitokoto" style="margin-left:5px;"> :D 获取中...</span>
+                    <p align="right" id="afrom"></p>
+                    <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+                    <script>
+                        fetch('https://v1.hitokoto.cn/')
+                            .then(function (res){
+                                return res.json();
+                            })
+                            .then(function (data) {
+                                var hitokoto = document.getElementById('hitokoto');
+                                var afrom = document.getElementById('afrom');
+                                hitokoto.innerText = data.hitokoto;
+                                afrom.innerText =  '——' + data.from_who + '《' + data.from + '》' ;
+                            })
+                            .catch(function (err) {
+                                console.error(err);
+                            })
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
     
 
     
@@ -737,6 +766,11 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+    <!-- 点击出现彩色气球爆炸效果 -->
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/clickBom.js"></script>
 
 </body>
 
